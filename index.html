@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone, Paper, Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dangrek&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background1">
+        <div id="scoreboard">
+            <div id="title"><p>ROCK<br>PAPER<br>SCISSORS</p></div>
+            <div id="scores">
+                <div id="computerscore">
+                    <p>COMPUTER<br>SCORE</p>
+                    <div id="computerScore">0</div>
+                </div>
+                <div id="yourscore">
+                    <p>YOUR<br>SCORE</p>
+                    <div id="yourScore">0</div>
+                </div>
+            </div>
+        </div>
+        <div id="yourOptions">
+            <div id="row1">
+                <div id="stone" class="circle" onclick="pickYourCircle('stone')">
+                    <div class="ellipse">
+                        <img src="Stone.png" height="50px" width="70px">
+                    </div>
+                </div>
+                <div id="scissors" class="circle" onclick="pickYourCircle('scissors')">
+                    <div class="ellipse">
+                        <img src="Scissors.png" height="55px" width="45px">
+                    </div>
+                </div>
+            </div>
+            <div id="row2">
+                <div id="paper" class="circle" onclick="pickYourCircle('paper')">
+                    <div class="ellipse">
+                        <img src="Paper.png" height="65px" width="65px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="result">
+            <div id="youPickedCon"><p>YOU PICKED</p><div id="youPicked"></div></div>
+            <div id="referee">
+                <p id="youWin">YOU WIN</p>
+                <p id="against">AGAINST PC</p>
+                <button id="playAgain1" class="playAgain">PLAY AGAIN</button>
+            </div>
+            <div id="pcPickedCon"><p>PC PICKED</p><div id="pcPicked"></div></div>
+        </div>
+    </div>
+    <div id="bottomButtons">
+        <button id="open-hurray" class="bottomBtn">NEXT</button>
+        <button id="open-rules" class="bottomBtn">RULES</button>
+    </div>
+    <div id="rules">
+        <button id="close-rules">X</button>
+        <div id="rules-container">
+            <div id="header"><p>Game Rules</p></div>
+            <div id="rules-content">
+                <ul>
+                    <li class="bullet">Rock beats scissors, scissors beat paper, and paper beats rock.</li><br>
+                    <li class="bullet">Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li><br>
+                    <li class="bullet">Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li><br>
+                    <li class="bullet">If both players lay down the same hand, each player lays down another hand</li><br>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="background2">
+        <div id="trophyAndStars"><img src="trophy.png"></div>
+        <div id="textContent">
+            <p id="hurray">HURRAY!!</p>
+            <p id="wonGame">YOU WON THE GAME</p>
+            <button id="playAgain2" class="playAgain">PLAY AGAIN</button>
+        </div>
+    </div>
+    <div class="circle2 animation1" style="animation-delay: 0s"></div>
+    <div class="circle2 animation1" style="animation-delay: 1s"></div>
+    <div class="circle2 animation1" style="animation-delay: 2s"></div>
+    <div class="circle2 animation1" style="animation-delay: 3s"></div>
+    <div class="circle2 animation2" style="animation-delay: 0s"></div>
+    <div class="circle2 animation2" style="animation-delay: 1s"></div>
+    <div class="circle2 animation2" style="animation-delay: 2s"></div>
+    <div class="circle2 animation2" style="animation-delay: 3s"></div>
+    <script src="script.js"></script>
+</body>
+</html>
