@@ -1,0 +1,617 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: Roboto;
+}
+#background1 {
+    background-color: #8CC461;
+    height: 100vh;
+    width: 100vw;
+    display: flex; /* flex */
+    flex-direction: column;
+    align-items: center;
+}
+#scoreboard {
+    height: 20%;
+    width: 47%;
+    border: 2.5px solid #FFFFFF;
+    border-radius: 0.8125rem;
+    margin-top: 4.375rem;
+    display: flex; /* flex */
+    justify-content: space-between;
+}
+#title {
+    color: #FFFFFF;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-align: left;
+    height: 100%;
+    margin-left: 1.25rem;
+    margin-top: 0.3125rem;
+}
+#scores {
+    height: 100%;
+    width: 37%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1.25rem;
+}
+#computerscore, #yourscore {
+    height: 6.875rem;
+    width: 7.5rem;
+    background-color: #FFFFFF;
+    border-radius: 9px;
+    text-align: center;
+}
+#computerscore p, #yourscore p {
+    color: #656565;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.1875rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.437rem;
+}
+#computerscore div, #yourscore div {
+    color: #252525;
+    font-size: 3.7rem;
+    font-weight: 700;
+    line-height: 3.75rem;
+}
+#yourOptions {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18.75rem 18.75rem;
+    height: 45%;
+    width: 24%;
+    margin-top: 6.25rem;
+    display: flex; /* flex */
+    justify-content: space-between;
+    background-image: url("triangle.png");
+    flex-direction: column;
+}
+.ellipse {
+    height: 6.437rem;
+    width: 7.437rem;
+    border-radius: 50%;
+    box-shadow: 3px 0px 21px 1px #00000033 inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ellipse:hover {
+    background-color: hsl(0, 0%, 95%);
+}
+.ellipse:active {
+    background-color: hsl(0, 0%, 90%);
+}
+#stone {
+    border: 16px solid #0074B6;
+}
+#scissors {
+    border: 16px solid #BD00FF;
+}
+#row1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8.437rem;
+    width: 100%;
+}
+#row2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8.437rem;
+    width: 100%;
+}
+#paper {
+    border: 16px solid #FFA943;
+}
+.circle {
+    height: 8.437rem;
+    width: 8.437rem;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: -1px 1px 11px 0px #00000059;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+.circle:active { 
+    transform: scale(0.90);
+}
+#bottomButtons {
+    position: fixed;
+    height: 2.812rem;
+    width: 40%;
+    right: 2rem;
+    bottom: 1.5rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.bottomBtn {
+    height: 2.812rem;
+    width: 8.125rem;
+    background-color: transparent;
+    outline: none;
+    border: 2.5px solid #FFFFFF;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+#open-rules {
+    outline: none;
+}
+.bottomBtn:hover {
+    background-color: hsl(94, 46%, 62%);
+}
+.bottomBtn:active {
+    transform: scale(0.90);
+    background-color: hsl(94, 46%, 67%);
+}
+#open-hurray {
+    margin-left: 2rem;
+    display: none; /* block */
+}
+#rules {
+    display: none;
+    height: 49%;
+    width: 20%;
+    background-color: none;
+    position: fixed;
+    right: 0.625rem;
+    bottom: 5.625rem;
+}
+#rules-container {
+    height: 91%;
+    width: 90%;
+    margin-top: 1.875rem;
+    background-color: #004429;
+    border: 7px solid #FFFFFF;
+    border-radius: 0.812rem;
+}
+#close-rules {
+    position: absolute;
+    right: 0;
+    height: 3.437rem;
+    width: 3.437rem;
+    border-radius: 50%;
+    outline: none;
+    font-family: "Dangrek", sans-serif;
+    font-family: Dangrek;
+    font-size: 2.75rem;
+    font-weight: 400;
+    line-height: 5rem;
+    background-color: #FF0000;
+    border: 5px solid #FFFFFF;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+#close-rules:active {
+    transform: scale(0.90);
+}
+#header {
+    width: 100%;
+    height: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.812rem;
+    font-weight: 500;
+    line-height: 2.125rem;
+    color: #FFFFFF;
+}
+#rules-content {
+    height: 80%;
+    width: 100%;
+}
+#rules-content ul {
+    margin-left: 1.25rem;
+    margin-right: 0.625rem;
+    font-size: 0.812rem;
+    font-weight: 400;
+    line-height: 0.937rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+#rules-content ul li {
+    position: relative;
+    color: #FFFFFF;
+    padding-left: 1.25rem;
+}
+.bullet::before {
+    content: "■";
+    color: yellow;
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+#result {
+    height: 37%;
+    width: 48%;
+    margin-top: 7rem;
+    display: none; /* flex */
+}
+#youPickedCon, #pcPickedCon {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#referee {
+    height: 100%;
+    width: 40%;
+    text-align: center;
+}
+#pcPickedCon p, #youPickedCon p {
+    color: #FFFFFF;
+    font-size: 1.062rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    letter-spacing: 0.1em;
+}
+#playAgain1 {
+    margin-top: 20px;
+}
+.playAgain {
+    border: none;
+    width: 8.125rem;
+    height: 1.875rem;
+    background-color: #FFFFFF;
+    border-radius: 9px;
+    color: #6B6B6B;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.062rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+.playAgain:hover {
+    background-color: hsl(0, 0%, 95%);
+}
+.playAgain:active {
+    transform: scale(0.90);
+    background-color: hsl(0, 0%, 90%);
+}
+#youWin {
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 2.812rem;
+    letter-spacing: 0.1em;
+    margin-top: 40%;
+}
+#against {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.812rem;
+    letter-spacing: 0.1em;
+}
+#stone2 {
+    border: 16px solid #0074B6;
+    display: flex; /* flex */
+}
+#paper2 {
+    border: 16px solid #FFA943;
+    display: flex; /* flex */
+}
+#scissors2 {
+    border: 16px solid #BD00FF;
+    display: flex; /* flex */
+}
+#stoneimg {
+    height: 50px;
+    width: 70px;
+}
+#paperimg {
+    height: 65px;
+    width: 65px;
+}
+#scissorsimg {
+    height: 55px;
+    width: 45px;
+}
+.circle2 {
+    border-radius: 50%;
+    background-color: #1DA82B;
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    opacity: 0;
+    animation: scaleIn 4s infinite cubic-bezier(.36, .11, .89, .32);
+}
+.animation1 {
+    bottom: 19.5%;
+    left: 28%;
+    display: none; /* block */
+    animation-delay: 0s;
+}
+.animation2 {
+    bottom: 19.5%;
+    right: 28%;
+    display: none; /* block */
+    animation-delay: 0s;
+}
+@keyframes scaleIn {
+    from {
+      transform: scale(.5, .5);
+      opacity: .5;
+    }
+    to {
+      transform: scale(2.5, 2.5);
+      opacity: 0;
+    }
+}
+.picked {
+    height: 9.375rem;
+    width: 9.375rem;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: -1px 1px 11px 0px #00000059;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+#background2 {
+    background-color: #8CC461;
+    height: 100vh;
+    width: 100vw;
+    display: none; /* flex */
+    flex-direction: column;
+}
+#trophyAndStars {
+    height: 45%;
+    margin-top: 10vh;
+    background-image: url("stars.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28rem 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+#trophyAndStars img {
+    height: 11rem;
+    width: 11rem;
+    margin-bottom: 0.6rem;
+}
+#textContent {
+    height: 45%;
+    text-align: center;
+}
+#playAgain2 {
+    margin-top: 3.3rem;
+}
+#hurray {
+    color: #FFFFFF;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 6.625rem;
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+}
+#wonGame {
+    color: #FFFFFF;
+    font-size: 2.3rem;
+    font-weight: 500;
+    line-height: 3rem;
+    letter-spacing: 0.1em;
+}
+@media (max-width: 400px) {
+    #scoreboard {
+        width: 90%;
+        height: 15%;
+        margin-top: 2rem;
+    }
+    #title {
+        font-size: 1.4rem;
+        margin-left: 0.8rem;
+    }
+    #scores {
+        height: 100%;
+        width: 52%;
+        margin-right: 0.8rem;
+    }
+    #computerscore, #yourscore {
+        height: 5rem;
+        width: 5rem;
+    }
+    #computerscore p, #yourscore p {
+        font-size: 0.6rem;
+        line-height: 0.8rem;
+        margin-top: 0.437rem;
+    }
+    #computerscore div, #yourscore div {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    #yourOptions {
+        background-size: 18.75rem 18.75rem;
+        height: 45%;
+        width: 90%;
+        margin-top: 6.25rem;
+    }
+    .ellipse {
+        height: 6.437rem;
+        width: 7.437rem;
+        border-radius: 50%;
+    }
+    #stone {
+        border: 16px solid #0074B6;
+    }
+    #scissors {
+        border: 16px solid #BD00FF;
+    }
+    #row1 {
+        height: 8.437rem;
+        width: 100%;
+    }
+    #row2 {
+        height: 8.437rem;
+        width: 100%;
+    }
+    #paper {
+        border: 16px solid #FFA943;
+    }
+    .circle {
+        height: 8.437rem;
+        width: 8.437rem;
+    }
+    #bottomButtons {
+        height: 2.812rem;
+        width: 100%;
+        right: 2rem;
+        bottom: 1.5rem;
+    }
+    #open-hurray {
+        margin-left: 2.7rem;
+    }
+    #rules {
+        height: 55%;
+        width: 80%;
+        z-index: 200;
+        right: 1.2rem;
+        bottom: 7rem;
+    }
+    #result {
+        height: 65%;
+        width: 90%;
+        margin-top: 1.5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #youPickedCon, #pcPickedCon {
+        height: 33%;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+    }
+    #referee {
+        height: 33%;
+        width: 90%;
+        text-align: center;
+    }
+    #pcPickedCon p, #youPickedCon p {
+        font-size: 1.062rem;
+        line-height: 1rem;
+    }
+    #playAgain1 {
+        margin-top: 5px;
+    }
+    .playAgain {
+        width: 8.125rem;
+        height: 1.875rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1.062rem;
+    }
+    #youWin {
+        font-size: 2rem;
+        line-height: 2.812rem;
+        margin-top: 5%;
+    }
+    #against {
+        font-size: 1.2rem;
+        font-weight: 800;
+        line-height: 1.812rem;
+    }
+    #stone2 {
+        border: 13px solid #0074B6;
+    }
+    #paper2 {
+        border: 13px solid #FFA943;
+    }
+    #scissors2 {
+        border: 13px solid #BD00FF;
+    }
+    #stoneimg{
+        height: 40px;
+        width: 57px;
+    }
+    #paperimg {
+        height: 50px;
+        width: 50px;
+    }
+    #scissorsimg {
+        height: 45px;
+        width: 35px;
+    }
+    .circle2 {
+        width: 1vw;
+        height: 1vw;
+    }
+    .animation1 {
+        top: 26.5%;
+        left: 33%;
+        visibility: hidden;
+    }
+    .animation2 {
+        bottom: 11%;
+        right: 33%;
+        visibility: hidden;
+    }
+    @keyframes scaleIn {
+        from {
+          transform: scale(.5, .5);
+          opacity: 0;
+        }
+        to {
+          transform: scale(2.5, 2.5);
+          opacity: 0;
+        }
+    }
+    .picked {
+        height: 7rem;
+        width: 7rem;
+    }
+    #trophyAndStars {
+        height: 48%;
+        margin-top: 1vh;
+        background-size: 20rem 12rem;
+    }
+    #trophyAndStars img {
+        height: 9rem;
+        width: 9rem;
+        margin-bottom: 0.6rem;
+    }
+    #textContent {
+        height: 48%;
+        text-align: center;
+    }
+    #playAgain2 {
+        margin-top: 2rem;
+    }
+    #hurray {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 6.625rem;
+        margin-top: 1rem;
+    }
+    #wonGame {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }   
+}
