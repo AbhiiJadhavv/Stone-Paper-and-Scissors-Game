@@ -131,6 +131,11 @@ const setPcScore = (pcscore) => {
     localStorage.setItem('pcScore', pcscore);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#yourScore").innerText = YOURSCORE;
+    document.querySelector("#computerScore").innerText = PCSCORE;
+});
+
 const addNext = (next) => {
     let openHurray = document.getElementById("open-hurray");
     openHurray.style.display = next;
